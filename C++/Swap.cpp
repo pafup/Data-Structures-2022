@@ -1,31 +1,32 @@
-#include<iostream>
+#include <iostream>
+#include <array>
+
 using namespace std;
 
-int main(){
-  
-    cout<<"Enter size\n";
-    int n,temp;
-    cin>>n;
+int main(void) {
 
-    cout<<"Enter array\n";
-    int a[n];
-    for(int i=0;i<n;i++)
-    cin>>a[i];
+   array<int, 3> arr1 = {10, 20, 30};
+   array<int, 3> arr2 = {51, 52, 53};
 
-    for(int i=0;i<n;i++){
-        if(i==0){
-            temp=a[0];
-            a[0]=a[n-1];
-        }
-        else{
-            temp=a[i]+temp;
-            a[i]=temp-a[i];
-            temp=temp-a[i];
-        }
-    }
+   cout << "Contents of arr1 and arr2 before swap operation\n";
+   cout << "arr1 = ";
+   for (int &i : arr1) cout << i << " ";
+   cout << endl;
 
-    for(int i=0;i<n;i++)
-    cout<<a[i];
+   cout << "arr2 = ";
+   for (int &i : arr2) cout << i << " ";
+   cout << endl << endl;
 
-    return 0;
+   arr1.swap(arr2);
+
+   cout << "Contents of arr1 and arr2 after swap operation\n";
+   cout << "arr1 = ";
+   for (int &i : arr1) cout << i << " ";
+   cout << endl;
+
+   cout << "arr2 = ";
+   for (int &i : arr2) cout << i << " ";
+   cout << endl;
+
+   return 0;
 }
