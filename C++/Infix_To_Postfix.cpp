@@ -12,6 +12,7 @@ int value(char c) {
     else
         return -1;
 }
+//function
 void infixToPostfix(string s) {
     vector<char> arr;
     string answer;
@@ -38,11 +39,12 @@ void infixToPostfix(string s) {
         }
     }
     while(!arr.empty()) {
-        answer += arr[arr.size()-1];
+        answer = answer + arr[arr.size()-1];
         arr.pop_back();
     } 
     cout << answer << endl;
 }
+//main
 int main() {
     string exp ;
     cout<<"Enter the expression to be converted: "<<endl;
